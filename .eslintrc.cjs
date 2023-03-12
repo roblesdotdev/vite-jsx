@@ -34,6 +34,7 @@ module.exports = {
   rules: {
     'import/extensions': 'off',
     'import/no-unresolved': 'off',
+    'import/no-extraneous-dependencies': 'off',
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
     'prettier/prettier': 'error',

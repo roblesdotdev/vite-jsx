@@ -1,4 +1,4 @@
-import Button from '~/componets/ui/Button'
+import Button from '@/componets/ui/Button'
 import { useState } from 'react'
 
 function App() {

@@ -23,3 +23,7 @@ Run
 ```
 pnpm start
 ```
+
+### Aliases
+
+- `@/*`: `src/*`
