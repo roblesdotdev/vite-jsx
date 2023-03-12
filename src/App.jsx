@@ -1,8 +1,8 @@
 import Button from '@/componets/ui/Button'
-import { useState } from 'react'
+import { useFoo } from '@/lib/hooks'
 
 function App() {
-  const [state, setState] = useState(0)
+  const { state, setState } = useFoo()
 
   const handleClick = () => {
     setState(state + 1)
