@@ -9,7 +9,7 @@ Javascript + React + Eslint + Prettier
 Clone this repo:
 
 ```
-npx digit roblesdotdev/vite-jsx myapp && cd myapp
+npx degit roblesdotdev/vite-jsx myapp && cd myapp
 ```
 
 Install
