@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
+import { fetcher } from './api-fetcher'
 
 function getInitialValue(key, defaultValue, convertFromString) {
   const localStorageValue = localStorage.getItem(key)
@@ -12,7 +13,7 @@ function getInitialValue(key, defaultValue, convertFromString) {
   return typeof defaultValue === 'function' ? defaultValue() : defaultValue
 }
 
-export function useLocalStorageState(
+function useLocalStorageState(
   key,
   defaultValue = '',
   { convertToString = JSON.stringify, convertFromString = JSON.parse } = {},
@@ -27,3 +28,9 @@ export function useLocalStorageState(
 
   return [state, setState]
 }
+
+function useClient() {
+  return useCallback((endpoint, config) => fetcher(endpoint, { ...config }), [])
+}
+
+export { useLocalStorageState, useClient }

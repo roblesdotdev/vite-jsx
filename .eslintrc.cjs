@@ -46,11 +46,5 @@ module.exports = {
       'error',
       { allowShortCircuit: true, allowTernary: true },
     ],
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        devDependencies: true,
-      },
-    ],
   },
 }

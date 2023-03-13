@@ -1,5 +1,5 @@
-import Button from '@/componets/ui/Button'
-import { useLocalStorageState } from '@/lib/hooks'
+import Button from '@/componets/ui/button'
+import { useLocalStorageState } from '@/utils/hooks'
 
 function App() {
   const [state, setState] = useLocalStorageState('counter', 0)
@@ -7,6 +7,7 @@ function App() {
   const handleClick = () => {
     setState(state + 1)
   }
+
   return (
     <div style={{ textAlign: 'center' }}>
       <h1>Counter: {state} </h1>
