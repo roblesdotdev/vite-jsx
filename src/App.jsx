@@ -1,8 +1,8 @@
 import Button from '@/componets/ui/Button'
-import { useFoo } from '@/lib/hooks'
+import { useLocalStorageState } from '@/lib/hooks'
 
 function App() {
-  const { state, setState } = useFoo()
+  const [state, setState] = useLocalStorageState('counter', 0)
 
   const handleClick = () => {
     setState(state + 1)
