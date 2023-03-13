@@ -2,7 +2,7 @@
 
 Lightweight react starter.
 
-Javascript + React + Eslint + Prettier
+Javascript + React + Router + Eslint + Prettier
 
 ### Usage
 
