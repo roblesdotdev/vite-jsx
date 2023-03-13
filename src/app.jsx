@@ -1,18 +1,38 @@
-import Button from '@/componets/ui/button'
-import { useLocalStorageState } from '@/utils/hooks'
+import {
+  Navigate,
+  Route,
+  BrowserRouter as Router,
+  Routes,
+} from 'react-router-dom'
+import {
+  WelcomeScreen,
+  DashboardScreen,
+  CounterScreen,
+  UsersScreen,
+  NotFoundScreen,
+} from '@/screens'
 
 function App() {
-  const [state, setState] = useLocalStorageState('counter', 0)
-
-  const handleClick = () => {
-    setState(state + 1)
-  }
-
   return (
-    <div style={{ textAlign: 'center' }}>
-      <h1>Counter: {state} </h1>
-      <Button text="Increment" onClick={handleClick} />
+    <div>
+      <AppRoutes />
     </div>
+  )
+}
+
+function AppRoutes() {
+  return (
+    <Router>
+      <Routes>
+        <Route index element={<WelcomeScreen />} />
+        <Route path="dashboard" element={<DashboardScreen />}>
+          <Route index element={<Navigate to="counter" />} />
+          <Route path="counter" element={<CounterScreen />} />
+          <Route path="users" element={<UsersScreen />} />
+        </Route>
+        <Route path="*" element={<NotFoundScreen />} />
+      </Routes>
+    </Router>
   )
 }
 
